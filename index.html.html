@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>August Cohen Advisory - Option A: Charcoal + Teal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --charcoal: #2d3436;
+            --charcoal-deep: #1e2022;
+            --warm-white: #faf9f7;
+            --cream: #f5f3ef;
+            --teal: #3d7a80;
+            --teal-muted: #5a9299;
+            --slate: #636e72;
+            --text-primary: #2d3436;
+            --text-secondary: #636e72;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--warm-white);
+            color: var(--text-primary);
+            line-height: 1.7;
+            font-weight: 400;
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(250, 249, 247, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1.25rem 0;
+            border-bottom: 1px solid rgba(45, 52, 54, 0.08);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--charcoal);
+            text-decoration: none;
+            letter-spacing: 0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--teal);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            padding: 7rem 2rem 4rem;
+            background: linear-gradient(135deg, var(--warm-white) 0%, var(--cream) 100%);
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(61, 122, 128, 0.03) 0%, rgba(61, 122, 128, 0.08) 100%);
+            clip-path: polygon(30% 0, 100% 0, 100% 100%, 0% 100%);
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-eyebrow {
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--teal);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.8rem, 5vw, 4.2rem);
+            line-height: 1.15;
+            color: var(--charcoal-deep);
+            margin-bottom: 1.5rem;
+            max-width: 800px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background-color: var(--teal);
+            color: white;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: var(--charcoal);
+            transform: translateY(-2px);
+        }
+
+        /* Credentials Bar */
+        .credentials {
+            background: var(--charcoal-deep);
+            padding: 3rem 2rem;
+        }
+
+        .credentials-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .credentials-label {
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 1.5rem;
+        }
+
+        .company-names {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .company-names span {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.85);
+            letter-spacing: 0.05em;
+        }
+
+        /* About Section */
+        .about {
+            padding: 4rem 2rem;
+            background: var(--warm-white);
+        }
+
+        .about-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--teal);
+            margin-bottom: 1.5rem;
+        }
+
+        .about h2 {
+            font-size: 2.4rem;
+            color: var(--charcoal-deep);
+            margin-bottom: 2rem;
+            line-height: 1.3;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-august {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(45, 52, 54, 0.1);
+        }
+
+        .august-photo img {
+            width: 100%;
+            height: auto;
+            filter: grayscale(10%);
+        }
+
+        .august-bio h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            color: var(--charcoal-deep);
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .august-bio p {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            line-height: 1.75;
+        }
+
+        .about-stats {
+            display: flex;
+            gap: 4rem;
+            margin-top: 3rem;
+            padding-top: 2.5rem;
+            border-top: 1px solid rgba(45, 52, 54, 0.1);
+        }
+
+        .stat {
+            text-align: left;
+        }
+
+        .stat-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.8rem;
+            font-weight: 500;
+            color: var(--charcoal-deep);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 4rem 2rem;
+            background: var(--cream);
+        }
+
+        .services-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .services h2 {
+            font-size: 2.4rem;
+            color: var(--charcoal-deep);
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--warm-white);
+            padding: 2.5rem;
+            border: 1px solid rgba(45, 52, 54, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            border-color: var(--teal);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(45, 52, 54, 0.1);
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            color: var(--charcoal-deep);
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 4rem 2rem;
+            background: var(--charcoal-deep);
+        }
+
+        .testimonials-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .testimonials .section-label {
+            color: var(--teal-muted);
+            text-align: center;
+        }
+
+        .testimonials h2 {
+            font-size: 2.4rem;
+            color: white;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .testimonial-carousel {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .carousel-track-container {
+            overflow: hidden;
+            flex: 1;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .testimonial {
+            min-width: 50%;
+            box-sizing: border-box;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            padding: 2rem;
+            margin: 0 0.75rem;
+        }
+
+        .testimonial-text {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.85);
+            line-height: 1.7;
+            margin-bottom: 1.25rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            font-size: 0.8rem;
+            color: var(--teal-muted);
+            font-weight: 600;
+            letter-spacing: 0.05em;
+        }
+
+        .carousel-btn {
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            width: 45px;
+            height: 45px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .carousel-btn:hover {
+            background: var(--teal);
+            border-color: var(--teal);
+        }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 2rem;
+        }
+
+        .carousel-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .carousel-dot.active {
+            background: var(--teal);
+        }
+
+        @media (max-width: 768px) {
+            .testimonial {
+                min-width: 100%;
+            }
+            .carousel-btn {
+                display: none;
+            }
+        }
+
+        /* Resources Section */
+        .resources {
+            padding: 4rem 2rem;
+            background: var(--warm-white);
+            border-top: 1px solid rgba(45, 52, 54, 0.08);
+        }
+
+        .resources-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .resources h2 {
+            font-size: 2.4rem;
+            color: var(--charcoal-deep);
+            margin-bottom: 1rem;
+        }
+
+        .resources-intro {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+        }
+
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .resource-card {
+            background: var(--cream);
+            padding: 2rem;
+            border: 1px solid rgba(45, 52, 54, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .resource-card:hover {
+            border-color: var(--teal);
+        }
+
+        .resource-type {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--teal);
+            margin-bottom: 0.75rem;
+        }
+
+        .resource-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            color: var(--charcoal-deep);
+            margin-bottom: 0.75rem;
+            font-weight: 500;
+        }
+
+        .resource-card p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .resource-link {
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--teal);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .resource-link:hover {
+            color: var(--charcoal);
+        }
+
+        .resource-link.coming-soon {
+            color: var(--slate);
+            cursor: default;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 4rem 2rem;
+            background: var(--cream);
+        }
+
+        .contact-container {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2.4rem;
+            color: var(--charcoal-deep);
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-text {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+        }
+
+        .contact-form {
+            text-align: left;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid rgba(45, 52, 54, 0.15);
+            background: white;
+            font-family: inherit;
+            font-size: 1rem;
+            color: var(--text-primary);
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23636e72' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            padding-right: 2.5rem;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--slate);
+            opacity: 0.7;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--teal);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 1.2rem;
+            background: var(--teal);
+            color: white;
+            border: none;
+            font-family: inherit;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-button:hover {
+            background: var(--charcoal);
+        }
+
+        .form-confirmation {
+            display: none;
+            text-align: center;
+            padding: 4rem 2rem;
+            background: white;
+            border: 1px solid rgba(45, 52, 54, 0.1);
+        }
+
+        .confirmation-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--teal);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin: 0 auto 1.5rem;
+        }
+
+        .form-confirmation h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: var(--charcoal-deep);
+            margin-bottom: 0.75rem;
+        }
+
+        .form-confirmation p {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 2rem;
+            background: var(--charcoal-deep);
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: white;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--teal-muted);
+        }
+
+        .footer-copyright {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.4);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .company-names span {
+                display: block;
+                margin: 0.5rem 0;
+            }
+
+            .company-names span::after {
+                display: none;
+            }
+
+            .about-stats {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .about-august {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .august-photo {
+                max-width: 250px;
+            }
+
+            .services-grid,
+            .testimonial-grid,
+            .resources-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 1.5rem;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">August Cohen Advisory</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#testimonials">Results</a></li>
+                <li><a href="#resources">Insights</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <p class="hero-eyebrow">Executive Career Strategy</p>
+            <h1>Strategic positioning for executives ready for what's next</h1>
+            <p class="hero-subtitle">Partnering with VPs and SVPs navigating the path to C-suite roles, and CXOs planning their next chapter.</p>
+            <a href="#contact" class="cta-button">Start a Conversation</a>
+        </div>
+    </section>
+
+    <section class="credentials">
+        <div class="credentials-content">
+            <p class="credentials-label">Clients have secured leadership roles at</p>
+            <p class="company-names">
+                <span>Amazon</span>
+                <span>Microsoft</span>
+                <span>Cisco</span>
+                <span>IBM</span>
+                <span>VMware</span>
+                <span>Verizon</span>
+                <span>CrowdStrike</span>
+                <span>Red Hat</span>
+                <span>Wells Fargo</span>
+                <span>Coca-Cola</span>
+                <span>Toyota</span>
+                <span>Boeing</span>
+                <span>Home Depot</span>
+                <span>Lenovo</span>
+                <span>Nasdaq</span>
+                <span>Starbucks</span>
+                <span>Nutanix</span>
+            </p>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-container">
+            <p class="section-label">About</p>
+            <h2>Most high-performing executives have the capability for C-suite leadership—but lack the positioning that makes decision-makers see them as ready.</h2>
+            <p class="about-text">I partner with ambitious VPs and SVPs who are ready for C-suite roles but need strategic positioning to make it happen. Through deep-dive interviewing and candid coaching, I help translate 15-25 year career trajectories into compelling narratives that open doors at Fortune 500 organizations, PE-backed firms, and high-growth technology companies.</p>
+            <p class="about-text">This isn't just resume writing. It's strategic advisory for executives who understand that the path to the C-suite requires more than credentials—it requires positioning, timing, and the right relationships.</p>
+            
+            <div class="about-august">
+                <div class="august-photo">
+                    <img src="https://media.licdn.com/dms/image/v2/D4E03AQFOAz2n6tFMRg/profile-displayphoto-crop_800_800/B4EZuGs1s5HcAI-/0/1767491460227?e=1770249600&v=beta&t=TnZ9zj7h_4x_V_Z4wLZL5NCuzjGD5hSw3EBVFDk9NlY" alt="August Cohen">
+                </div>
+                <div class="august-bio">
+                    <h3>About August</h3>
+                    <p>I hold an MS in Operations Management and previously sold complex B2B financial products including commercial premium financing services and import/export trade credit insurance to CXOs at med/large and global Fortune companies. That experience shaped how I work today; I understand how senior leaders think, how decisions get made at the top, and what it takes to be seen as ready for the next level.</p>
+                    <p>For the last 18 years, I've advised 650+ senior executives through career transitions, promotions, and pivots. My approach is direct: deep-dive interviews that surface what makes you distinctive, candid feedback that challenges assumptions, and strategic positioning that opens doors. Clients tell me I'm a straight talker—I take that as a compliment.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="services-container">
+            <p class="section-label">Services</p>
+            <h2>How We Work Together</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Executive Collateral Development</h3>
+                    <p>Resumes, biographies, LinkedIn profiles, and cover letters strategically engineered to position VPs and SVPs for C-suite opportunities. Not documents—strategic positioning tools.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Search Strategy & Networking</h3>
+                    <p>Intensive sessions teaching relationship-based approaches to access unadvertised opportunities where 70%+ of C-suite roles are filled before public posting.</p>
+                </div>
+                <div class="service-card">
+                    <h3>C-Suite Readiness Assessment</h3>
+                    <p>Career roadmapping sessions to identify positioning gaps, action plans with quarterly milestones, and accountability coaching to ensure progress toward C-suite readiness.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Interview & Offer Strategy</h3>
+                    <p>Mock sessions, strategic coaching, and guidance on compensation discussions and offer evaluation at the executive level.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+        <div class="testimonials-container">
+            <p class="section-label">Results</p>
+            <h2>What Clients Say</h2>
+            <div class="testimonial-carousel">
+                <button class="carousel-btn prev" onclick="moveCarousel(-1)">&#8249;</button>
+                <div class="carousel-track-container">
+                    <div class="carousel-track">
+                        <div class="testimonial">
+                            <p class="testimonial-text">"Professional career support is difficult to obtain. August Cohen is exceptional in the services and wisdom she provides to executives preparing for their next opportunity. Her prior corporate experience enhances the quality of product and advice that she provides. Her assistance exceeded my expectation. She provided remarkable insight and advice, which allowed me to present my qualifications with laser clarity and specificity."</p>
+                            <p class="testimonial-author">— CHRO/COO, Healthcare RCM</p>
+                        </div>
+                        <div class="testimonial">
+                            <p class="testimonial-text">"If you are looking for a top notch coach to help you achieve your career goals, then I would highly recommend August. She has a rigorous interview process, and has the ability to connect ideas and industry trends masterfully. Furthermore, she has the ability to articulate those ideas and concepts to develop your personal brand and value."</p>
+                            <p class="testimonial-author">— Treasurer & Executive Board Member</p>
+                        </div>
+                        <div class="testimonial">
+                            <p class="testimonial-text">"August is a consummate professional. She is a wealth of information and is able to give professional advice on the best techniques to successfully target a specific job market. She has an excellent ability to take a large volume of business accomplishments and condense them into what really matters to the current business market."</p>
+                            <p class="testimonial-author">— Principal Consultant, Software Development</p>
+                        </div>
+                        <div class="testimonial">
+                            <p class="testimonial-text">"August's method of interviewing me brought out important contributions I would not have come up with on my own. AI is changing the way people consume content and she is up on the latest technologies. The further along in your career you are, the less you recognize what makes you special in the marketplace. August brings out those things and highlights them."</p>
+                            <p class="testimonial-author">— Head of Global Partner Development, IT Asset Solutions</p>
+                        </div>
+                        <div class="testimonial">
+                            <p class="testimonial-text">"August is a real strategic partner. The interview process made all the difference. She really took the time to understand my background and goals. She has great instincts for what to emphasize, what to simplify, and how to position things so they land well. She turned a very dense, data-heavy career history into something clear, focused, and high-signal."</p>
+                            <p class="testimonial-author">— VP, Global Solutions Engineering, Commerce Solutions</p>
+                        </div>
+                        <div class="testimonial">
+                            <p class="testimonial-text">"August is upfront and transparent with feedback and has a perspective from experience that is not easily found. I felt like she really listened to me during our 1:1 session to translate my experience in a much more sophisticated way; it was a shift in thinking that really helped me reframe and think through responses at a higher level."</p>
+                            <p class="testimonial-author">— Global Talent Leader, Civil Infrastructure</p>
+                        </div>
+                        <div class="testimonial">
+                            <p class="testimonial-text">"August is a phenomenal executive coach. You are given 5-Star service, stimulated to think of your unique value and return on investment. Investment in yourself and the power of a professional is priceless."</p>
+                            <p class="testimonial-author">— Executive Director, Healthcare Services</p>
+                        </div>
+                        <div class="testimonial">
+                            <p class="testimonial-text">"August is simply the best in her field. After still not getting interviews for the kind of role that I wanted, I decided I needed to invest to promote my experience. She is professional, and has a no non-sense approach to get the job done. It is an investment in yourself and your future."</p>
+                            <p class="testimonial-author">— Global Enterprise Change Management, Software Development</p>
+                        </div>
+                        <div class="testimonial">
+                            <p class="testimonial-text">"August is THE EXPERT in her industry. If you have had any military experience and need help transitioning into the Corporate world, do not hesitate, use her services."</p>
+                            <p class="testimonial-author">— Head of DOD/FED Sales, Supply Chain Solutions</p>
+                        </div>
+                        <div class="testimonial">
+                            <p class="testimonial-text">"August did an amazing job transforming my background into a fantastic resume and bio. I could not be more pleased with her work."</p>
+                            <p class="testimonial-author">— President & CEO, Electronic Manufacturing</p>
+                        </div>
+                        <div class="testimonial">
+                            <p class="testimonial-text">"August provided a level of service geared towards a C-level executive. She crafted an entire personalized strategy and drew from her many years of experience with multiple clients to give nuanced recommendations."</p>
+                            <p class="testimonial-author">— Strategic Product Executive, Identity Solutions</p>
+                        </div>
+                        <div class="testimonial">
+                            <p class="testimonial-text">"August was able to take my seemingly haphazard 20 years of experience and home in on the next step in my career. I started seeing opportunities that matched what I was looking for. Thanks to August, I found a new job within a few months."</p>
+                            <p class="testimonial-author">— VP, Digital Experience, Financial Services</p>
+                        </div>
+                        <div class="testimonial">
+                            <p class="testimonial-text">"There is a difference between mastery and being a 'professional' at something. August is a master. The product she delivers is dazzling to the C suite and recruiters alike. August's incomparable command of the fields of HR, job markets, marketing and branding is what makes her so in demand. If you are serious about your future, August has that rare ability to synthesize a world class strategy."</p>
+                            <p class="testimonial-author">— Cyber & Tech Leader, Research Services</p>
+                        </div>
+                        <div class="testimonial">
+                            <p class="testimonial-text">"August was a straight talker and dove into my past experience to pull out the most relevant and interesting experience to meet the current market demand. Given my very broad experience, she helped me focus on where I wanted to go with a new job, not just jobs that I could do."</p>
+                            <p class="testimonial-author">— Senior Partner/President, Data & Proprietary Technologies</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-btn next" onclick="moveCarousel(1)">&#8250;</button>
+            </div>
+            <div class="carousel-dots"></div>
+        </div>
+    </section>
+
+    <section class="resources" id="resources">
+        <div class="resources-container">
+            <p class="section-label">Executive Insights</p>
+            <h2>Research & Perspectives</h2>
+            <p class="resources-intro">Complimentary resources for executives navigating the path to senior leadership.</p>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-type">Market Analysis</div>
+                    <h3>C-Suite Market Intelligence Brief</h3>
+                    <p>Current dynamics in executive hiring, board expectations, compensation trends, and what decision-makers are looking for in C-suite candidates.</p>
+                    <a href="mailto:august@augustcohenadvisory.com?subject=C-Suite Market Intelligence Brief Request&body=Please send me the C-Suite Market Intelligence Brief.%0A%0AName:%0ALinkedIn URL:" class="resource-link">Request PDF →</a>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-type">Compensation Guide</div>
+                    <h3>C-Suite Compensation Guide</h3>
+                    <p>Benchmark data and strategic considerations for executives evaluating offers and negotiating packages at the C-level.</p>
+                    <a href="#" class="resource-link coming-soon">Coming Soon</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <p class="section-label">Contact</p>
+            <h2>Partner with August</h2>
+            <p class="contact-text">All consultations are confidential.</p>
+            <form class="contact-form" id="contact-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="linkedin">LinkedIn Profile URL</label>
+                    <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/yourprofile" required>
+                </div>
+                <div class="form-group">
+                    <label for="title">Current Job Title & Company</label>
+                    <input type="text" id="title" name="title" placeholder="e.g., VP of Engineering, Acme Corp">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="compensation">Target Compensation Range</label>
+                        <select id="compensation" name="compensation" required>
+                            <option value="">Select range...</option>
+                            <option value="200-300k">$200k - $300k</option>
+                            <option value="300-500k">$300k - $500k</option>
+                            <option value="500k-1m">$500k - $1M</option>
+                            <option value="1m+">$1M+</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="objective">Primary Objective</label>
+                        <select id="objective" name="objective" required>
+                            <option value="">Select objective...</option>
+                            <option value="csuite-pivot">C-Suite Pivot / Promotion</option>
+                            <option value="senior-targeting-cxo">Senior Exec Targeting CXO</option>
+                            <option value="positioning">Resume / Bio Development</option>
+                            <option value="search-strategy">Relationship-Based Search Strategies</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="context">Confidential Context</label>
+                    <textarea id="context" name="context" placeholder="Briefly describe your current situation or challenge..."></textarea>
+                </div>
+                <button type="submit" class="submit-button">Request Consultation</button>
+            </form>
+            <div class="form-confirmation" id="form-confirmation">
+                <div class="confirmation-icon">✓</div>
+                <h3>Thank you.</h3>
+                <p>Your inquiry is held in strict confidence. I'll follow up personally within 1-2 business days.</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Hide form, show confirmation
+            document.getElementById('contact-form').style.display = 'none';
+            document.getElementById('form-confirmation').style.display = 'block';
+            // In production, you'd send the form data to your backend here
+        });
+
+        // Testimonial Carousel
+        const track = document.querySelector('.carousel-track');
+        const testimonials = document.querySelectorAll('.testimonial');
+        const dotsContainer = document.querySelector('.carousel-dots');
+        let currentIndex = 0;
+        const itemsPerView = window.innerWidth <= 768 ? 1 : 2;
+        const totalSlides = Math.ceil(testimonials.length / itemsPerView);
+
+        // Create dots
+        for (let i = 0; i < totalSlides; i++) {
+            const dot = document.createElement('div');
+            dot.classList.add('carousel-dot');
+            if (i === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToSlide(i));
+            dotsContainer.appendChild(dot);
+        }
+
+        function updateDots() {
+            document.querySelectorAll('.carousel-dot').forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentIndex);
+            });
+        }
+
+        function moveCarousel(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = totalSlides - 1;
+            if (currentIndex >= totalSlides) currentIndex = 0;
+            goToSlide(currentIndex);
+        }
+
+        function goToSlide(index) {
+            currentIndex = index;
+            const offset = currentIndex * (100 / itemsPerView) * itemsPerView;
+            track.style.transform = `translateX(-${offset}%)`;
+            updateDots();
+        }
+
+        // Auto-advance every 7 seconds
+        setInterval(() => moveCarousel(1), 7000);
+    </script>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">August Cohen Advisory</div>
+            <div class="footer-links">
+                <a href="https://linkedin.com/in/augustcohenadvisory" target="_blank">LinkedIn</a>
+            </div>
+            <div class="footer-copyright">© 2026 August Cohen Advisory</div>
+        </div>
+    </footer>
+</body>
+</html>
